@@ -1,0 +1,128 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+
+\usetheme[progressbar=frametitle]{metropolis}
+\setbeamertemplate{frame numbering}[fraction]
+\metroset{background=dark}
+
+\definecolor{primary}{RGB}{245, 10, 10}
+
+\setbeamercolor{palette primary}{bg=white, fg=black}
+\setbeamercolor{background canvas}{parent=palette primary}
+\setbeamercolor{normal text}{fg=black}
+\setbeamercolor{progress bar}{use=palette primary,fg=primary}
+
+% title page
+\title{Example presentation}
+\subtitle{This is our subtitle}
+\author[Tartarini, Doe]
+{F.~Tartarini\inst{1} \and J.~Doe\inst{2}}
+\institute{
+\inst{1}
+Faculty of Engineering, University 1
+\and
+\inst{2}
+Faculty of Science, University 2
+}
+\date{2020}
+
+\begin{document}
+
+\begin{frame}{}
+\titlepage
+\end{frame}
+
+\begin{frame}{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+\section{Introduction and Background}
+
+\subsection{Background}
+
+\begin{frame}{Use lists}
+\begin{itemize}
+    \item First element
+    \begin{itemize}
+        \item First sub-element
+        \item Second sub-element
+    \end{itemize}
+    \item Second element
+\end{itemize}
+\begin{enumerate}[(I)]
+    \item First element
+    \begin{enumerate}[i]
+        \item First sub-element
+        \item Second sub-element
+    \end{enumerate}
+    \item Second element
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Use columns}
+    \begin{columns}
+        \begin{column}{0.65\textwidth}
+            This is the the second slide in this subsection.
+            This is the the second slide in this subsection.
+            This is the the second slide in this subsection.
+            This is the the second slide in this subsection.
+            This is the the second slide in this subsection.
+        \end{column}
+        \begin{column}{0.35\textwidth}
+            This is the the second slide in this subsection.
+            This is the the second slide in this subsection.
+            This is the the second slide in this subsection.
+            This is the the second slide in this subsection.
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Introduction}
+
+\begin{frame}{Introduction}
+    \begin{figure}
+        \includegraphics[width=\textwidth, height=0.8\textheight, keepaspectratio]{figures/figure1.jpg}\\
+        \caption{caption Introduction}
+        \label{fig:figureIntroduction}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Table}
+    \begin{table}[]
+        \centering
+        \begin{tabular}{c|c}
+            Variable & Value \\
+            \hline
+            Temperature & 20 \\
+            Humidity & 60
+        \end{tabular}
+        \caption{Caption}
+        \label{tab:my_label}
+    \end{table}
+\end{frame}
+
+\section{Methodology}
+
+\begin{frame}{Methodology slide}
+    \begin{columns}
+        \begin{column}{0.65\textwidth}
+            \begin{figure}
+                \includegraphics[width=\textwidth, keepaspectratio]{figures/figure1.jpg}\\
+                \caption{caption of the figure}
+                \label{fig:figure1}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.35\textwidth}
+            This is the the second slide in this subsection.
+            This is the the second slide in this subsection.
+            This is the the second slide in this subsection.
+            Figure~\ref{fig:figure1} is showing how we code.
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{}
+Thank you for listening
+\end{frame}
+
+\end{document}
