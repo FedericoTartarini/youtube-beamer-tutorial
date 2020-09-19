@@ -1,5 +1,17 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 \usepackage[utf8]{inputenc}
+
+\usetheme[progressbar=frametitle]{metropolis}
+\setbeamertemplate{frame numbering}[fraction]
+\metroset{background=dark}
+
+\definecolor{primary}{RGB}{245, 10, 10}
+
+\setbeamercolor{palette primary}{bg=white, fg=black}
+\setbeamercolor{background canvas}{parent=palette primary}
+\setbeamercolor{normal text}{fg=black}
+\setbeamercolor{progress bar}{use=palette primary,fg=primary}
+
 
 % title page
 \title{Example presentation}
@@ -11,7 +23,7 @@
 Faculty of Engineering, University 1
 \and
 \inst{2}
-Faculty of Science,\\University 2
+Faculty of Science, University 2
 }
 \date{2020}
 
