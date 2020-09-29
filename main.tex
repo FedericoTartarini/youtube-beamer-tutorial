@@ -12,6 +12,28 @@
 \setbeamercolor{normal text}{fg=black}
 \setbeamercolor{progress bar}{use=palette primary,fg=primary}
 
+% import citation package
+\usepackage[backend=biber, style=authoryear]{biblatex}
+\addbibresource{main.bib}
+\AtBeginBibliography{\small}
+
+% footnote without number
+\newcommand\blfootnote[1]{
+\begingroup
+\renewcommand\thefootnote{}\footnote{#1}
+\addtocounter{footnote}{-1}
+\endgroup
+}
+
+% % footnote and page number on same line
+% \setbeamertemplate{footline}{}
+
+% \setbeamertemplate{logo}{
+% \usebeamercolor[fg]{footline}
+% \usebeamerfont{page number in head/foot}
+% \usebeamertemplate*{frame numbering}
+% }
+
 % title page
 \title{Example presentation}
 \subtitle{This is our subtitle}
@@ -59,6 +81,10 @@ Faculty of Science, University 2
 \end{enumerate}
 \end{frame}
 
+\begin{frame}{Introduction}
+This is some text that we want to reference \footnote{\cite{Fiorentini2019, Tartarini2020, Kim2019, Tartarini2020a}}
+\end{frame}
+
 \begin{frame}{Use columns}
     \begin{columns}
         \begin{column}{0.65\textwidth}
@@ -66,25 +92,29 @@ Faculty of Science, University 2
             This is the the second slide in this subsection.
             This is the the second slide in this subsection.
             This is the the second slide in this subsection.
-            This is the the second slide in this subsection.
+            This is the the second slide in this subsection \footnotemark[1]
         \end{column}
         \begin{column}{0.35\textwidth}
             This is the the second slide in this subsection.
             This is the the second slide in this subsection.
             This is the the second slide in this subsection.
             This is the the second slide in this subsection.
+            \footnotemark[2]
         \end{column}
     \end{columns}
+    \footnotetext[1]{text of the note}
+    \footnotetext[2]{\cite{Tartarini2020}}
 \end{frame}
 
 \subsection{Introduction}
 
 \begin{frame}{Introduction}
     \begin{figure}
-        \includegraphics[width=\textwidth, height=0.8\textheight, keepaspectratio]{figures/figure1.jpg}\\
-        \caption{caption Introduction}
+        \includegraphics[width=\textwidth, height=0.5\textheight, keepaspectratio]{figures/figure1.jpg}\\
+        % \caption{caption Introduction}
         \label{fig:figureIntroduction}
     \end{figure}
+    \blfootnote{our beautiful picture}
 \end{frame}
 
 \begin{frame}{Table}
@@ -123,6 +153,10 @@ Faculty of Science, University 2
 
 \begin{frame}{}
 Thank you for listening
+\end{frame}
+
+\begin{frame}[allowframebreaks, noframenumbering]
+\printbibliography
 \end{frame}
 
 \end{document}
